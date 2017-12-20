@@ -5,6 +5,7 @@ Studing Service And BroadCastReciver
 ![播放时](https://github.com/flyingtercel/Music/blob/master/app/src/main/res/mipmap-hdpi/zz.png)
 
 MainActivity中代码如下
+```
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private Button start;
     private Button stop;
@@ -46,6 +47,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
         startService(intent);
     }
+    ```
+    ```
     class MusicReceiver extends BroadcastReceiver{
 
         @Override
@@ -64,8 +67,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 }
-
+```
 Service代码如下：
+```
 public class MusicService extends Service {
     private String[]musics = {"ainy.mp3","beiwei.mp3","woxiang.mp3","yuanfeng.mp3"};
     private int state = 0x111;//代表停止
@@ -161,9 +165,11 @@ public class MusicService extends Service {
     }
 
 }
-
+```
 在清单文件中对Service进行注册
+```
 <service
             android:name=".MusicService"
             android:enabled="true"
             android:exported="true"></service>
+```
